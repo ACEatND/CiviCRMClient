@@ -14,8 +14,8 @@
 
 <?php
 session_start();
-
-if ($_POST && isset($_POST['login']) && $_POST['txtPassword'] == 'cppw1') {
+//edit the ne
+if ($_POST && isset($_POST['login']) && $_POST['txtPassword'] == 'YOUR_PASSWORD_GOES_HERE') {
   
 	$_SESSION['user'] = "yhdgtej";
 	echo "<a href=\"http://ace.nd.edu/civiCRMClient/admin.php\" title=\"Click here to edit settings\">Edit Settings</a>";
