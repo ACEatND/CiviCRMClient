@@ -14,7 +14,9 @@
 
 <?php
 session_start();
-//edit the ne
+//***********************************************************************************************************
+//**   'YOUR_PASSWORD_GOES_HERE' should be changed to 'password', where password is the new password
+//***********************************************************************************************************
 if ($_POST && isset($_POST['login']) && $_POST['txtPassword'] == 'YOUR_PASSWORD_GOES_HERE') {
   
 	$_SESSION['user'] = "yhdgtej";
