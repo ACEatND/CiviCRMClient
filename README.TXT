@@ -8,6 +8,10 @@
 *                         Initial Code Contributed By:
 *                                KDESolutions
 *
+*                       Further developed and tested by the
+*                         Alliance for Catholic Education 
+*                         At the University of Notre Dame
+*
 *
 ***********************************************************************************
 
