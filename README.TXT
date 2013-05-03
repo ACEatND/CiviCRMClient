@@ -15,6 +15,9 @@
 *
 ***********************************************************************************
 
+For initial documentation and setup, please read the following document:
+https://docs.google.com/document/d/1GdDhW2Txh1PJ9xI9xmYsN2LxuHxKgmL5qtEhYveChIU/
+
 To use the CE CRM Mobile application with your installation of SugarCRM simply copy
 the files and folders to a subdirectory underneath your SugarCRM installation. Then
 navigate to that subdirectory from your mobile device. You will be prompted for a login
