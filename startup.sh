@@ -24,7 +24,7 @@ echo
 echo
  
 #working
-echo "Is your version of CiviCRM newer than 4.2.8? (anything except 'yes' will default to no)"
+echo "Is your version of CiviCRM before 4.2.8? (anything except 'yes' will default to no)"
 read newerversion
  
 if [[ $newerversion == "yes" ]]; then
