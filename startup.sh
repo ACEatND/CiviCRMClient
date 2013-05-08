@@ -1,3 +1,5 @@
+#!/bin/bash
+
 clear
 echo
 echo
@@ -33,10 +35,18 @@ if [[ $newerversion == "yes" ]]; then
         echo
         echo
 fi
+
+echo "backing up Application.Constants.min.js"
+cp js/Application.Constants.min.js js/Application.Constants.min.js.old
+
  
 key=`grep 'SITE_KEY' ../administrator/components/com_civicrm/civicrm.settings.php | awk 'BEGIN{FS=","}{print $2}'`
 key=${key:2:32}
- 
+
+eval "sed 's/API_KEY_GOES_HERE/$key/g' <Application.Constants.min.js.old >Application.Constants.min.js
+
+echo
+echo 
 echo "API Key set"
 echo
 echo
@@ -46,8 +56,6 @@ echo "Type the URL for your server"
 echo "do NOT include 'http://' (e.g. example.com)"
 read site
 echo $site
-echo "backing up Application.Constants.min.js"
-cp js/Application.Constants.min.js js/Application.Constants.min.js.old
 eval "sed 's/example.com/$site/g' <js/Application.Constants.min.js.old >js/Application.Constants.min.js"
 echo "URL set"
 echo
