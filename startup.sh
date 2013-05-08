@@ -17,7 +17,7 @@ echo
 cp ../administrator/components/com_civicrm/civicrm/CRM/Utils/REST.php ../administrator/components/com_civicrm/civicrm/CRM/Utils/RESTCOPY.php
 echo
 echo
-sed 's/)))/),'"'"'contact_id'"'"' => $result[0]))/g' <../administrator/components/com_civicrm/civicrm/CRM/Utils/RESTCOPY.php >../administrator/components/com_civicrm/CRM/Utils/REST.php'
+sed 's/)))/),'"'"'contact_id'"'"' => $result[0]))/g' <../administrator/components/com_civicrm/civicrm/CRM/Utils/RESTCOPY.php >../administrator/components/com_civicrm/civicrm/CRM/Utils/REST.php
 echo "REST.php changed"
 echo
 echo
@@ -43,7 +43,7 @@ cp js/Application.Constants.min.js js/Application.Constants.min.js.old
 key=`grep 'SITE_KEY' ../administrator/components/com_civicrm/civicrm.settings.php | awk 'BEGIN{FS=","}{print $2}'`
 key=${key:2:32}
 
-eval "sed 's/API_KEY_GOES_HERE/$key/g' <Application.Constants.min.js.old >Application.Constants.min.js
+eval "sed 's/API_KEY_GOES_HERE/$key/g' <js/Application.Constants.min.js.old >js/Application.Constants.min.js"
 
 echo
 echo 
@@ -51,9 +51,8 @@ echo "API Key set"
 echo
 echo
  
-#working
 echo "Type the URL for your server"
-echo "do NOT include 'http://' (e.g. example.com)"
+echo 'do NOT include "http://" (e.g. example.com)'
 read site
 echo $site
 eval "sed 's/example.com/$site/g' <js/Application.Constants.min.js.old >js/Application.Constants.min.js"
