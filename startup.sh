@@ -17,7 +17,7 @@ echo
 cp ../administrator/components/com_civicrm/civicrm/CRM/Utils/REST.php ../administrator/components/com_civicrm/civicrm/CRM/Utils/RESTCOPY.php
 echo
 echo
-sed 's/)))/),'"'"'contact_id'"'"' => $result[0]))/g' <../administrator/components/com_civicrm/civicrm/CRM/Utils/RESTCOPY.php >../administrator/compon$
+sed 's/)))/),'"'"'contact_id'"'"' => $result[0]))/g' <../administrator/components/com_civicrm/civicrm/CRM/Utils/RESTCOPY.php >../administrator/components/com_civicrm/CRM/Utils/REST.php'
 echo "REST.php changed"
 echo
 echo
