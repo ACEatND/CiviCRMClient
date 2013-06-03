@@ -14,7 +14,7 @@ echo
 echo "Backing up REST.php"
 echo
 echo
-cp ../administrator/components/com_civicrm/civicrm/CRM/Utils/REST.php ../administrator/components/com_civicrm/civicrm/CRM/Utils/RESTCOPY.php
+cp ../administrator/components/com_civicrm/civicrm/CRM/Utils/REST.php ../administrator/components/com_civicrm/civicrm/CRM/Utils/REST.php.old
 echo
 echo
 sed 's/)))/),'"'"'contact_id'"'"' => $result[0]))/g' <../administrator/components/com_civicrm/civicrm/CRM/Utils/RESTCOPY.php >../administrator/components/com_civicrm/civicrm/CRM/Utils/REST.php
@@ -64,7 +64,7 @@ echo "What would you like the administrator password to be?"
 read password
 #echo $password
 echo "Backing up admin_login"
-cp admin_login.php admin_login.old.php
+cp admin_login.php admin_login.php.old
 echo
 echo
 eval "sed 's/YOUR_PASSWORD_GOES_HERE/$password/g' <admin_login.old.php >admin_login.php"
