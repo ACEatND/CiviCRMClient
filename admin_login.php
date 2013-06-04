@@ -15,9 +15,9 @@
 <?php
 session_start();
 //***********************************************************************************************************
-//**   'ace1234' should be changed to 'password', where password is the new password
+//**   'YOUR_PASSWORD_GOES_HERE' should be changed to 'password', where password is the new password
 //***********************************************************************************************************
-if ($_POST && isset($_POST['login']) && $_POST['txtPassword'] == 'ace1234') {
+if ($_POST && isset($_POST['login']) && $_POST['txtPassword'] == 'YOUR_PASSWORD_GOES_HERE') {
   
 	$_SESSION['user'] = "yhdgtej";
 	echo "<a href=\"http://ace.nd.edu/civiCRMClient/admin.php\" title=\"Click here to edit settings\">Edit Settings</a>";
