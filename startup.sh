@@ -39,13 +39,13 @@ if [[ $newerversion == "yes" ]]; then
 fi
 
 echo "backing up Application.Constants.min.js"
-cp js/Application.Constants.min.js js/Application.Constants.min.js.old
-rm js/Application.Constants.min.js
+cp ./js/Application.Constants.min.js ./js/Application.Constants.min.js.old
+rm ./js/Application.Constants.min.js
  
 key=`grep 'SITE_KEY' ../administrator/components/com_civicrm/civicrm.settings.php | awk 'BEGIN{FS=","}{print $2}'`
 key=${key:2:32}
 
-eval "sed 's/API_KEY_GOES_HERE/$key/g' js/Application.Constants.min.js.old" >js/Application.Constants.min.js
+eval "sed 's/API_KEY_GOES_HERE/$key/g' ./js/Application.Constants.min.js.old" >./js/Application.Constants.min.js
 
 echo
 echo 
@@ -57,7 +57,7 @@ echo "Type the URL for your server"
 echo 'do NOT include "http://" (e.g. example.com)'
 read site
 echo $site
-eval "sed 's/example.com/$site/g' <js/Application.Constants.min.js.old >js/Application.Constants.min.js"
+eval "sed 's/example.com/$site/g' <./js/Application.Constants.min.js.old >./js/Application.Constants.min.js"
 echo "URL set"
 echo
 echo
@@ -69,7 +69,7 @@ echo "Backing up admin_login"
 cp admin_login.php admin_login.php.old
 echo
 echo
-eval "sed 's/YOUR_PASSWORD_GOES_HERE/$password/g' <admin_login.php.old >admin_login.php"
+eval "sed 's/YOUR_PASSWORD_GOES_HERE/$password/g' <./admin_login.php.old >./admin_login.php"
 echo "Password set"
 echo
 echo
@@ -82,3 +82,6 @@ echo
 echo
 echo
 echo "Setup complete"
+echo
+echo
+echo
