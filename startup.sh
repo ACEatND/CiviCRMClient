@@ -45,7 +45,7 @@ rm js/Application.Constants.min.js
 key=`grep 'SITE_KEY' ../administrator/components/com_civicrm/civicrm.settings.php | awk 'BEGIN{FS=","}{print $2}'`
 key=${key:2:32}
 
-eval "sed 's/API_KEY_GOES_HERE/$key/g' <js/Application.Constants.min.js.old >js/Application.Constants.min.js"
+eval "sed 's/API_KEY_GOES_HERE/$key/g' js/Application.Constants.min.js.old" >js/Application.Constants.min.js
 
 echo
 echo 
