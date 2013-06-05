@@ -16,7 +16,7 @@ echo
 echo
 cp ../administrator/components/com_civicrm/civicrm/CRM/Utils/REST.php ../administrator/components/com_civicrm/civicrm/CRM/Utils/REST.php.old
 rm ../administrator/components/com_civicrm/civicrm/CRM/Utils/REST.php
-cp ./useablerest.php ../administrator/components/com_civicrm/civicrm/CRM/Utils/REST.php
+cp ./usablerest.php ../administrator/components/com_civicrm/civicrm/CRM/Utils/REST.php
 echo
 echo
 #sed 's/)))/),'"'"'contact_id'"'"' => $result[0]))/g' <../administrator/components/com_civicrm/civicrm/CRM/Utils/REST.php.old >../administrator/components/com_civicrm/civicrm/CRM/Utils/REST.php
