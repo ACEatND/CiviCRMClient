@@ -15,9 +15,11 @@ echo "Backing up REST.php"
 echo
 echo
 cp ../administrator/components/com_civicrm/civicrm/CRM/Utils/REST.php ../administrator/components/com_civicrm/civicrm/CRM/Utils/REST.php.old
+rm ../administrator/components/com_civicrm/civicrm/CRM/Utils/REST.php
+cp ./useablerest.php ../administrator/components/com_civicrm/civicrm/CRM/Utils/REST.php
 echo
 echo
-sed 's/)))/),'"'"'contact_id'"'"' => $result[0]))/g' <../administrator/components/com_civicrm/civicrm/CRM/Utils/REST.php.old >../administrator/components/com_civicrm/civicrm/CRM/Utils/REST.php
+#sed 's/)))/),'"'"'contact_id'"'"' => $result[0]))/g' <../administrator/components/com_civicrm/civicrm/CRM/Utils/REST.php.old >../administrator/components/com_civicrm/civicrm/CRM/Utils/REST.php
 echo "REST.php changed"
 echo
 echo
@@ -38,7 +40,7 @@ fi
 
 echo "backing up Application.Constants.min.js"
 cp js/Application.Constants.min.js js/Application.Constants.min.js.old
-
+rm js/Application.Constants.min.js
  
 key=`grep 'SITE_KEY' ../administrator/components/com_civicrm/civicrm.settings.php | awk 'BEGIN{FS=","}{print $2}'`
 key=${key:2:32}
