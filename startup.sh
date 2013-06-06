@@ -75,7 +75,25 @@ echo "Password set"
 echo
 echo
 echo
- 
+
+echo "Would you like to use the included favicon.ico?"
+echo "(This is the icon that will show up in the top for the webpage)"
+echo "(Anything except for 'yes' will default to no)"
+echo "(This will not overwrite any previously existing icons)"
+read icon
+
+if [[ $icon == "yes" ]]; then
+	if [[ -a ../favicon.ico ]]; then
+		echo "Could not make icon; one already exists"
+	else
+		cp ./favicon.ico ..
+	fi
+fi
+
+echo
+echo
+echo
+
 #working
 echo "The server key is $key"
 echo "Enter that value into the api_key field in the database for the contacts you wish to have access to the mobile client."
