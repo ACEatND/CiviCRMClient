@@ -11,19 +11,19 @@ echo
 echo
  
 #working
-echo "Backing up REST.php"
-echo
-echo
-cp ../administrator/components/com_civicrm/civicrm/CRM/Utils/REST.php ../administrator/components/com_civicrm/civicrm/CRM/Utils/REST.php.old
-rm ../administrator/components/com_civicrm/civicrm/CRM/Utils/REST.php
-cp ./usablerest.php ../administrator/components/com_civicrm/civicrm/CRM/Utils/REST.php
-echo
-echo
-#sed 's/)))/),'"'"'contact_id'"'"' => $result[0]))/g' <../administrator/components/com_civicrm/civicrm/CRM/Utils/REST.php.old >../administrator/components/com_civicrm/civicrm/CRM/Utils/REST.php
-echo "REST.php changed"
-echo
-echo
-echo
+#echo "Backing up REST.php"
+#echo
+#echo
+#cp ../administrator/components/com_civicrm/civicrm/CRM/Utils/REST.php ../administrator/components/com_civicrm/civicrm/CRM/Utils/REST.php.old
+#rm ../administrator/components/com_civicrm/civicrm/CRM/Utils/REST.php
+#cp ./usablerest.php ../administrator/components/com_civicrm/civicrm/CRM/Utils/REST.php
+#echo
+#echo
+##sed 's/)))/),'"'"'contact_id'"'"' => $result[0]))/g' <../administrator/components/com_civicrm/civicrm/CRM/Utils/REST.php.old >../administrator/components/com_civicrm/civicrm/CRM/Utils/REST.php
+#echo "REST.php changed"
+#echo
+#echo
+#echo
  
 #working
 echo "Is your version of CiviCRM before 4.2.8? (anything except 'yes' will default to no)"
