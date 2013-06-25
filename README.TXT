@@ -1,19 +1,19 @@
-***********************************************************************************
-*                  CE Mobile CRM (Community Edition Mobile CRM)
-*    Is a mobile client based on the hard work from the folks over at
-*    jQuery Mobile so please be sure to visit their site at jquerymobile.com
-*
-*          This file must be included in any re-distribution of the software
-*
-*                         Initial Code Contributed By:
-*                                KDESolutions
-*
-*                       Further developed and tested by the
-*                         Alliance for Catholic Education 
-*                         At the University of Notre Dame
-*
-*
-***********************************************************************************
+*********************************************************************************
+*                  CE Mobile CRM (Community Edition Mobile CRM)                 *
+*    Is a mobile client based on the hard work from the folks over at           *
+*    jQuery Mobile so please be sure to visit their site at jquerymobile.com    *
+*                                                                               *
+*          This file must be included in any re-distribution of the software    *
+*                                                                               *
+*                         Initial Code Contributed By:                          *
+*                                KDESolutions                                   *
+*                                                                               *
+*                       Further developed and tested by the                     *
+*                         Alliance for Catholic Education                       *
+*                         At the University of Notre Dame                       *
+*                                                                               *
+*                                                                               *
+*********************************************************************************
 
 For initial documentation and setup, please read the following document:
 https://docs.google.com/document/d/1GdDhW2Txh1PJ9xI9xmYsN2LxuHxKgmL5qtEhYveChIU/
@@ -31,6 +31,11 @@ applications.
 
 As jquerymobile continues to progress, we will work to incorporate those changes into this application
 hopefully this will lead to 1 version for all platforms.
+
+Release 0.1.0.0 Change Log
+--- Uploaded to Git Hub
+--- Rest interface changed to AJAX
+--- Installation script added (for Joomla!)
 
 Release 0.0.2.4 Change Log
 --- Updated jquery.mobile to 1.0b2 (issue 15)
