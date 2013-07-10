@@ -32,6 +32,10 @@ applications.
 As jquerymobile continues to progress, we will work to incorporate those changes into this application
 hopefully this will lead to 1 version for all platforms.
 
+Release 1.0.1.0 Change Log
+--- Adding a contact now works without having infinite swirling circle
+--- Adding addresses for contacts now works
+
 Release 1.0.0.0 Change Log
 --- Uploaded to Git Hub
 --- Rest interface changed to AJAX
