@@ -662,7 +662,10 @@ function CiviCRMUpdateContactDetails(contact_id)
         contact_type: contactEditPageCiviCRMContactType,
         nick_name: contactEditPageCiviCRMNickName,
         "api.address.create": {
-            id: contactEditPageCiviCRMAddressId,
+            is_primary: 1,
+            sequential: 1,
+            location_type_id: 1,
+            //id: contactEditPageCiviCRMAddressId,
             street_address: contactEditPageCiviCRMStreet,
             city: contactEditPageCiviCRMCity,
             state_province: contactEditPageCiviCRMState,
@@ -710,6 +713,7 @@ function CiviCRMUpdateContactDetails(contact_id)
         if (contactEditPageCiviCRMContactId != NaN && contactEditPageCiviCRMContactId > 0)
         {
             params = $.extend({}, params, { id: contactEditPageCiviCRMContactId });
+            params["api.address.create"] = $.extend({},params["api.address.create"], { contact_id: contactEditPageCiviCRMContactId });
         }
     }
 
