@@ -107,7 +107,7 @@ function CiviCRMGetContactsListFromServer(contactType, a)
         IndividualsListCurrentOffset = a;
 
         $.mobile.pageLoading();
-
+//$.mobile.hidePageLoadingMsg();
         /*
         contact_type: {
         IN: ["Individual", "Household"] 
@@ -138,7 +138,6 @@ function CiviCRMGetContactsListFromServer(contactType, a)
                                    else {
                                    */
                                    $(".ui-page-active ul.list_content li[b-role!=search_options]").remove();
-
                                    if (currentPosition == null)
                                    {
                                        $.each(result.values, function(index, value)
@@ -204,6 +203,7 @@ function CiviCRMGetContactsListFromServer(contactType, a)
                                                        CurrentContactId = $(this).data("identity");
                                                        $.mobile.changePage("#ViewIndividualDetailsPage");
                                                        $.mobile.pageLoading();
+$.mobile.hidePageLoadingMsg();
                                                        CiviCRMGetIndividualDetails()
                                                    }
                                                });

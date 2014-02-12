@@ -143,6 +143,8 @@ function CiviCRMGetIndividualsListFromServer(pageIndex)
         if (currentPosition != null && ProximityRadius > 0) {
             api_method = "proximity";
             options = $.extend({}, options, {
+//                geo_code_1: currentPosition.coords.latitude,
+//                geo_code_2: currentPosition.coords.longitude,
                 latitude: currentPosition.coords.latitude, 
                 longitude: currentPosition.coords.longitude,
                 distance: ProximityRadius,
