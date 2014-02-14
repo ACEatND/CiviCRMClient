@@ -323,7 +323,7 @@ function CiviCRMGetOrganizationDetails()
                                    a.supplemental_address_2 = ensure_string(a.supplemental_address_2);
                                    a.city = ensure_string(a.city);
                                    a.postal_code = ensure_string(a.postal_code);
-                                   a.state_province = ensure_string(a.state_province);
+                                   a.state_province_name = ensure_string(a.state_province_name);
                                    a.country = ensure_string(a.country);
                                    a.gender = ensure_string(a.gender);
                                    a.do_not_email = ensure_string(a.do_not_email);
@@ -443,20 +443,20 @@ function CiviCRMGetOrganizationDetails()
 
                                    a.city = (a.city === undefined || trim(a.city) == "") ? "" : a.city;
                                    a.postal_code = (a.postal_code === undefined || trim(a.postal_code) == "") ? "" : a.postal_code;
-                                   a.state_province = (a.state_province === undefined || trim(a.state_province) == "") ? "" : a.state_province;
+                                   a.state_province_name = (a.state_province_name === undefined || trim(a.state_province_name) == "") ? "" : a.state_province_name;
                                    a.country = (a.country === undefined || trim(a.country) == "") ? "" : a.country;
                                    if (f != ""
                                             || a.city !== undefined && a.city != ""
                                             || a.postal_code !== undefined && a.postal_code != ""
-                                            || a.state_province !== undefined && a.state_province != ""
+                                            || a.state_province_name !== undefined && a.state_province_name != ""
                                             || a.country !== undefined && a.country != "") {
                                        var e = (a.city === undefined || trim(a.city) == "") ? "" : a.city;
-                                       var m = (a.state_province === undefined || trim(a.state_province) == "") ? "" : a.state_province;
+                                       var m = (a.state_province_name === undefined || trim(a.state_province_name) == "") ? "" : a.state_province_name;
                                        var g = (a.postal_code === undefined || trim(a.postal_code) == "") ? "" : a.postal_code;
                                        var i = (a.country === undefined || trim(a.country) == "") ? "" : a.country;
                                        /*
                                        var e = a.city,
-                                       m = a.state_province,
+                                       m = a.state_province_name,
                                        g = a.postal_code,
                                        i = a.country;
                                        */
@@ -573,7 +573,7 @@ function CiviCRMEditOrganizationDetails()
                                    a.supplemental_address_2 = ensure_string(a.supplemental_address_2);
                                    a.city = ensure_string(a.city);
                                    a.postal_code = ensure_string(a.postal_code);
-                                   a.state_province = ensure_string(a.state_province);
+                                   a.state_province_name = ensure_string(a.state_province_name);
                                    a.country = ensure_string(a.country);
                                    a.gender = ensure_string(a.gender);
                                    a.do_not_email = ensure_string(a.do_not_email);
@@ -592,7 +592,7 @@ function CiviCRMEditOrganizationDetails()
                                    $("#OrgEditPageCiviCRMAddressId").val(a.address_id);
                                    $("#OrgEditPageCiviCRMStreet").val(a.street_address);
                                    $("#OrgEditPageCiviCRMCity").val(a.city);
-                                   $("#OrgEditPageCiviCRMState").val(a.state_province).selectmenu("refresh"); ;
+                                   $("#OrgEditPageCiviCRMState").val(a.state_province_name).selectmenu("refresh"); ;
                                    $("#OrgEditPageCiviCRMZip").val(a.postal_code);
                                    $("#OrgEditPageCiviCRMCountry").val(a.country);
 
@@ -649,7 +649,7 @@ function CiviCRMUpdateOrganizationDetails()
                        id: orgEditPageCiviCRMAddressId,
                        street_address: orgEditPageCiviCRMStreet,
                        city: orgEditPageCiviCRMCity,
-                       state_province: orgEditPageCiviCRMState,
+                       state_province_id: orgEditPageCiviCRMState,
                        postal_code: orgEditPageCiviCRMZip,
                        country: orgEditPageCiviCRMCountry
                    },
