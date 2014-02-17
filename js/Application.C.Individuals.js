@@ -317,6 +317,7 @@ function CiviCRMGetIndividualDetails()
                                    a.do_not_phone = ensure_string(a.do_not_phone);
                                    a.do_not_sms = ensure_string(a.do_not_sms);
                                    a.do_not_trade = ensure_string(a.do_not_trade);
+				
                                    
                                    $("#IndividualNameH1").html(a.display_name);
                                    var c = a.contact_type;
@@ -519,6 +520,41 @@ function CiviCRMGetIndividualDetails()
                        $.mobile.hidePageLoadingMsg();
                    }
                });
+//	alert('got this far');
+	 $().crmRESTAPI('contact', 'getvalue',
+               {
+                   contact_id: CurrentIndividualId,
+                   'return': 'custom_9',
+                   api_key: API_KEY,
+                   key: CiviSessionId
+               },
+               {
+                   ajaxURL: SERVER_REST_URL,
+                   success: function(result, settings)
+                   {
+	//		alert("success");
+			if(result)
+			{
+				if(result.is_error == 0)
+				{	
+					if(result.result !== undefined)
+					{
+						var j = $("<li/>");
+						j.append("<p><br />STT Cohort<p>");
+						j.append(result.result);
+						$("#ViewIndividualDetailsPageDetailsList").append(j)
+					}
+				}
+			}
+			$("#ViewIndividualDetailsPageDetailsList").listview("refresh")
+//			getContactRelatedNotesInsetList(CurrentIndividualId);
+//                      getContactRelatedRelationshipsInsetList(CurrentIndividualId);
+			$.mobile.hidePageLoadingMsg();
+		   }
+		});
+//	$("#ViewIndividualDetailsPageDetailsList").append(j)
+	
+	
 }
 function CiviCRMEditIndividualDetails()
 {
