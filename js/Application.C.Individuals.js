@@ -547,25 +547,26 @@ function CiviCRMGetIndividualDetails()
 
                     // alert(result.values..custom_9);
                     //alert(j.custom_2); //'lol' + result.values[1].custom_2
-          					if(j.custom_2 !== undefined || 
-                      j.custom_3 !== undefined || 
-                      j.custom_4 !== undefined || 
-                      j.custom_9 !== undefined || 
-                     j.custom_23 !== undefined )
-          					{
-                      //alert('4');
+          					// if(j.custom_2 !== "" || 
+               //        j.custom_3 !== "" || 
+               //        j.custom_4 !== "" || 
+               //        j.custom_9 !== "" || 
+               //       j.custom_23 !== "" )
+          					// {
+                      //console.log(j);
                       // c = "";
                       // d = "";
                       $("#ViewIndividualDetailsPageAceInfoList").append('<li data-role="list-divider" role="heading">ACE Information</li>');
-                      if(j.custom_2 !== undefined && j.custom_2 !== '0')
+                      if(j.custom_2 !== "" && j.custom_2 !== '0')
                         {
+                          alert(j.custom_2);
                           c = $("<li/>");
                           d = "<h4>" + j.custom_2 + "</h4>";
                           c.append("<p><br />TEC Cohort</p>");
                           c.append(d);
                           $("#ViewIndividualDetailsPageAceInfoList").append(c)
                         }
-                      if(j.custom_3 !== undefined && j.custom_3 !== '0')
+                      if(j.custom_3 !== "" && j.custom_3 !== '0')
                         {
                           c = $("<li/>");
                           d = "<h4>" + j.custom_3 + "</h4>";
@@ -573,7 +574,7 @@ function CiviCRMGetIndividualDetails()
                           c.append(d);
                           $("#ViewIndividualDetailsPageAceInfoList").append(c)
                         }
-                        if(j.custom_4 !== undefined && j.custom_4 !== '0')
+                        if(j.custom_4 !== "" && j.custom_4 !== '0')
                         {
                           c = $("<li/>");
                           d = "<h4>" + j.custom_4 + "</h4>";
@@ -581,7 +582,7 @@ function CiviCRMGetIndividualDetails()
                           c.append(d);
                           $("#ViewIndividualDetailsPageAceInfoList").append(c)
                         }
-                        if(j.custom_9 !== undefined && j.custom_9 !== '0')
+                        if(j.custom_9 !== "" && j.custom_9 !== '0')
                         {
                           c = $("<li/>");
                           d = "<h4>" + j.custom_9 + "</h4>";
@@ -589,7 +590,7 @@ function CiviCRMGetIndividualDetails()
                           c.append(d);
                           $("#ViewIndividualDetailsPageAceInfoList").append(c)
                         }
-                         if(j.custom_23 !== undefined)
+                         if(j.custom_23 !== "")
                          {
                             // for (var i=0;i<j.custom23.length;i++)
                             // {
@@ -609,8 +610,8 @@ function CiviCRMGetIndividualDetails()
           						// j.append("<p><br />STT Cohort<p>");
           						// j.append(result.result);
           						// $("#ViewIndividualDetailsPageAceInfoList").append(j)
-          					}
                     $("#ViewIndividualDetailsPageAceInfoList").listview("refresh")
+                    //}
           				}
           			}
 			
