@@ -520,11 +520,13 @@ function CiviCRMGetIndividualDetails()
                        $.mobile.hidePageLoadingMsg();
                    }
                });
+  //$("#ViewIndividualDetailsPageDetailsList").append('<li data-role="list-divider">' + RES_INDIVIDUAL_LABEL + ' Information</li>')
+	$("#ViewIndividualDetailsPageAceInfoList li").remove();
 //	alert('got this far');
-	 $().crmRESTAPI('contact', 'getvalue',
+	 $().crmRESTAPI('contact', 'get',
                {
-                   contact_id: CurrentIndividualId,
-                   'return': 'custom_9',
+                   id: CurrentIndividualId,
+                   'return': 'custom_9,custom_23,custom_4,custom_3,custom_2', //ace cohort, ace community, rlp cohort, enl cohort, tec cohort
                    api_key: API_KEY,
                    key: CiviSessionId
                },
@@ -533,20 +535,85 @@ function CiviCRMGetIndividualDetails()
                    success: function(result, settings)
                    {
 	//		alert("success");
-			if(result)
-			{
-				if(result.is_error == 0)
-				{	
-					if(result.result !== undefined)
-					{
-						var j = $("<li/>");
-						j.append("<p><br />STT Cohort<p>");
-						j.append(result.result);
-						$("#ViewIndividualDetailsPageDetailsList").append(j)
-					}
-				}
-			}
-			$("#ViewIndividualDetailsPageDetailsList").listview("refresh")
+          			if(result)
+          			{
+                  var j = "";
+          				if(result.is_error == 0)
+          				{	
+
+                    
+                    var j = result.values[CurrentIndividualId];
+                    //console.log(j);
+
+                    // alert(result.values..custom_9);
+                    //alert(j.custom_2); //'lol' + result.values[1].custom_2
+          					if(j.custom_2 !== undefined || 
+                      j.custom_3 !== undefined || 
+                      j.custom_4 !== undefined || 
+                      j.custom_9 !== undefined || 
+                     j.custom_23 !== undefined )
+          					{
+                      //alert('4');
+                      // c = "";
+                      // d = "";
+                      $("#ViewIndividualDetailsPageAceInfoList").append('<li data-role="list-divider" role="heading">ACE Information</li>');
+                      if(j.custom_2 !== undefined && j.custom_2 !== '0')
+                        {
+                          c = $("<li/>");
+                          d = "<h4>" + j.custom_2 + "</h4>";
+                          c.append("<p><br />TEC Cohort</p>");
+                          c.append(d);
+                          $("#ViewIndividualDetailsPageAceInfoList").append(c)
+                        }
+                      if(j.custom_3 !== undefined && j.custom_3 !== '0')
+                        {
+                          c = $("<li/>");
+                          d = "<h4>" + j.custom_3 + "</h4>";
+                          c.append("<p><br />ENL Cohort</p>");
+                          c.append(d);
+                          $("#ViewIndividualDetailsPageAceInfoList").append(c)
+                        }
+                        if(j.custom_4 !== undefined && j.custom_4 !== '0')
+                        {
+                          c = $("<li/>");
+                          d = "<h4>" + j.custom_4 + "</h4>";
+                          c.append("<p><br />RLP Cohort</p>");
+                          c.append(d);
+                          $("#ViewIndividualDetailsPageAceInfoList").append(c)
+                        }
+                        if(j.custom_9 !== undefined && j.custom_9 !== '0')
+                        {
+                          c = $("<li/>");
+                          d = "<h4>" + j.custom_9 + "</h4>";
+                          c.append("<p><br />ACE Cohort</p>");
+                          c.append(d);
+                          $("#ViewIndividualDetailsPageAceInfoList").append(c)
+                        }
+                         if(j.custom_23 !== undefined)
+                         {
+                            // for (var i=0;i<j.custom23.length;i++)
+                            // {
+                            //   c = $("<li/>");
+                            //   d = "<h4>" + j.custom_23[i] + "</h4>";
+                            //   c.append("<p><br />ACE Community</p>");
+                            //   c.append(d);
+                            // }
+                          //console.log(j.custom_23);  
+                          c = $("<li/>");
+                          d = "<h4>" + j.custom_23 + "</h4>";
+                          c.append("<p><br />ACE Community</p>");
+                          c.append(d);
+                           $("#ViewIndividualDetailsPageAceInfoList").append(c)
+                         }
+          						// var j = $("<li/>");
+          						// j.append("<p><br />STT Cohort<p>");
+          						// j.append(result.result);
+          						// $("#ViewIndividualDetailsPageAceInfoList").append(j)
+          					}
+                    $("#ViewIndividualDetailsPageAceInfoList").listview("refresh")
+          				}
+          			}
+			
 //			getContactRelatedNotesInsetList(CurrentIndividualId);
 //                      getContactRelatedRelationshipsInsetList(CurrentIndividualId);
 			$.mobile.hidePageLoadingMsg();
