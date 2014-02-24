@@ -148,10 +148,10 @@ function CiviCRMGetIndividualsListFromServer(pageIndex)
                 latitude: currentPosition.coords.latitude, 
                 longitude: currentPosition.coords.longitude,
                 distance: ProximityRadius,
-                unit: 'mile'
+                units: 'miles'
             });
         }
-        $().crmRESTAPI('contact', api_method,
+        $().crmRESTAPI_POST('contact', api_method,
                options,
                {
                    ajaxURL: SERVER_REST_URL,
@@ -159,6 +159,7 @@ function CiviCRMGetIndividualsListFromServer(pageIndex)
                        if (result) {
                            if (result.is_error == 0) {
                                if (result.values != undefined) {
+                                    console.log(result.values);
 
                                    $(".ui-page-active ul.list_content li[b-role!=search_options]").remove();
 
@@ -185,6 +186,7 @@ function CiviCRMGetIndividualsListFromServer(pageIndex)
                                    //                                   {
                                    $.each(result.values, function (index, value) {
                                        if (typeof value == 'object') {
+
                                            value.display_name = ensure_string(value.display_name);
                                            value.contact_type = ensure_string(value.contact_type);
                                            f = $("<li/>"),
