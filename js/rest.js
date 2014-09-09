@@ -49,7 +49,7 @@ $(document).ready(function () {
     	  params['cache'] = false;
     	  var settings = $.extend({}, defaults, options);
     	  $(settings.msgbox).removeClass('msgok').removeClass('msgnok').html("");
-    	  $.getJSON(settings.ajaxURL,params,function(result){return settings.callBack(result,settings);});
+    	  $.postJSON(settings.ajaxURL,params,function(result){return settings.callBack(result,settings);});
       };
 
       $.fn.crmRESTAPI_POST = function(entity,action,params,options) {

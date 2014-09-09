@@ -724,7 +724,7 @@ function CiviCRMUpdateIndividualDetails()
     var indEditPageCiviCRMNotSMS = $("#IndEditPageCiviCRMDoNotSMS").is(":checked");
     var indEditPageCiviCRMNotTrade = $("#IndEditPageCiviCRMDoNotTrade").is(":checked");
 
-    $().crmRESTAPI_POST('contact', 'update',
+    $().crmRESTAPI_POST('contact', 'create',
                {
                    id: CurrentIndividualId,
                    first_name: indEditPageCiviCRMFirstName,
