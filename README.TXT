@@ -32,6 +32,9 @@ applications.
 As jquerymobile continues to progress, we will work to incorporate those changes into this application
 hopefully this will lead to 1 version for all platforms.
 
+Release 1.0.3.0 Change Log
+--- Lots of updates, now works with Civi 4.6.0 and Joomla 3.4.X
+
 Release 1.0.2.0 Change Log
 --- Former REST security measures removed, now works much more reliably on mobile devices
 
