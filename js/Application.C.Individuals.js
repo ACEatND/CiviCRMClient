@@ -159,7 +159,7 @@ function CiviCRMGetIndividualsListFromServer(pageIndex)
                        if (result) {
                            if (result.is_error == 0) {
                                if (result.values != undefined) {
-                                    console.log(result.values);
+                                    //console.log(result.values);
 
                                    $(".ui-page-active ul.list_content li[b-role!=search_options]").remove();
 
