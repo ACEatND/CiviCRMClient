@@ -129,6 +129,8 @@ function CiviCRMGetIndividualsListFromServer(pageIndex)
         $.mobile.pageLoading();
 
         $('#IndividualsListSearchText')
+	cohort = parseInt($('#IndSearchAceInfo').val());
+	console.log(cohort);
 
         options = {
             contact_type: "Individual",
@@ -138,7 +140,10 @@ function CiviCRMGetIndividualsListFromServer(pageIndex)
             api_key: API_KEY,
             key: CiviSessionId
         };
-
+	if(!isNaN(cohort)){
+	    options['custom_9'] = cohort;
+	}
+	
         api_method = "get";
         if (currentPosition != null && ProximityRadius > 0) {
             api_method = "proximity";
