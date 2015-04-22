@@ -32,6 +32,7 @@ function CiviCRMSearchIndividuals(forceReload, pageIndex) {
         pageIndex = 0;
     }
 
+    aceProgram = "";
     distanceValue = $('input[name="IndSearchDistanceRadio"]:checked').val();
     if (distanceValue == null || distanceValue == "" || distanceValue == "0") {
         currentPosition = null;
@@ -128,9 +129,10 @@ function CiviCRMGetIndividualsListFromServer(pageIndex)
 
         $.mobile.pageLoading();
 
-        $('#IndividualsListSearchText')
-	cohort = parseInt($('#IndSearchAceInfo').val());
-	console.log(cohort);
+
+
+//	cohort = parseInt($('#IndSearchAceInfo').val());
+//	console.log(cohort);
 
         options = {
             contact_type: "Individual",
@@ -140,9 +142,17 @@ function CiviCRMGetIndividualsListFromServer(pageIndex)
             api_key: API_KEY,
             key: CiviSessionId
         };
-	if(!isNaN(cohort)){
-	    options['custom_9'] = cohort;
-	}
+
+	var cohorts = ['custom_9', 'custom_4', 'custom_2', 'custom_3']
+	var aceOptions = $('.ui-page-active .ace_options .custom')
+	aceOptions.each(function(){
+	    if($(this).is(':checked')){
+              options[cohorts[$(this).val()]] = $('#ACESearchString').val(); //1 -> value in search box
+	    }
+	});
+
+
+//	    options['custom_9'] = cohort;
 	
         api_method = "get";
         if (currentPosition != null && ProximityRadius > 0) {
@@ -566,7 +576,6 @@ function CiviCRMGetIndividualDetails()
                       $("#ViewIndividualDetailsPageAceInfoList").append('<li data-role="list-divider" role="heading">ACE Information</li>');
                       if(j.custom_2 !== "" && j.custom_2 !== '0')
                         {
-                          alert(j.custom_2);
                           c = $("<li/>");
                           d = "<h4>" + j.custom_2 + "</h4>";
                           c.append("<p><br />TEC Cohort</p>");
